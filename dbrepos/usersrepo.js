@@ -13,15 +13,15 @@ exports.getAll = (callback) => {
 
 exports.add = (user, callback) => {
     const collection = db.getUsersCollection();
-    collection.insertOne({ name: user.name, email: user.email, password: user.password, type: user.type   })
+    collection.insertOne({ name: user.name, email: user.email, password: user.password, type: user.type})
         .then(()=> {
             console.log("User inserted.");
         })
 }
 
-exports.login = (email, password, callback) => {
+exports.login = (email, callback) => {
     const collection = db.getUsersCollection();
-    collection.findOne({email: email, password: password})
+    collection.findOne({email: email})
         .then((user) => {
             console.log(user);
             return callback(user);

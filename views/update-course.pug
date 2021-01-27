@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        title Add Course
+    body(style="padding:5%;padding-top:0")
+        include navbar.pug
+        hr
+
+        h1 Update Course
+        br
+        form(method="POST", action="/course/update")
+            input(class="form-control" name="_id" type="hidden" value=course._id)
+            div.form-group
+                label Name
+                input.form-control(name="Name" type="text" value=course.name)
+            div.form-group
+                label Category
+                input.form-control(name="Category" type="text" value=course.category)
+            div.form-group
+                label One Liner
+                input.form-control(name="OneLiner" type="text" value=course.oneliner)
+            div.form-group
+                label Duration
+                input.form-control(name="Duration" type="number" value=course.duration)
+            div.form-group
+                label Language
+                input.form-control(name="Language" type="text" value=course.language)
+            div.form-group
+                label Description
+                input.form-control(name="Description" type="text" value=course.description)    
+            button(class="btn btn-primary" type= "submit") Update Course

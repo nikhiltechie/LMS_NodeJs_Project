@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        title #{title}
+    body(style="padding: 5%; padding-top:0")
+        include navbar.pug
+        hr
+        
+        if courses.length
+            h3 #{title}
+                hr
+                div.row
+                    table.table
+                        thead
+                            tr
+                                th Number
+                                th Course Name
+                                th Category
+                                th Duration
+                                th
+                                th     
+                        tbody
+                            each course in courses
+                                tr
+                                    td 1
+                                    td #{course.name}
+                                    td #{course.category}
+                                    td #{course.duration}
+                                    td 
+                                        a(href="/course/update?id="+course._id class="btn btn-success") Update
+                                    td 
+                                        a(href="/course/delete?id="+course._id  class="btn btn-danger" style="float:right") Delete
+                hr
+        else
+            h2 No courses to display...
+        
+        

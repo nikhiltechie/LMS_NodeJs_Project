@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        title Register User
+    body(style="padding:5%;padding-top:0")
+        include navbarlogin.pug
+        hr
+
+        h1 Register User
+        br
+        form(method="POST", action="/user/add")
+            div.form-group
+                label Name
+                input.form-control(name="Name" type="text")
+            div.form-group
+                label Email
+                input.form-control(name="Email" type="text")
+            div.form-group
+                label Password
+                input.form-control(name="Password" type="password")    
+            div.form-group
+                label User Type
+                select.form-control(name="Type")
+                    option(value = "1") Instructor
+                    option(value = "2") Student
+    
+            button(class="btn btn-primary" type= "submit") Submit

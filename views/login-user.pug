@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        title Login User
+    body(style="padding:5%;padding-top:0")
+        include navbarlogin.pug
+        hr
+        h1 Login User
+        br
+        form(method="POST", action="/user/login")
+            div.form-group
+                label Email
+                input.form-control(name="Email" type="text")
+            div.form-group
+                label Password
+                input.form-control(name="Password" type="password")
+            if validationerror
+                div.alert.alert-warning #{validationerror}
+            button(class="btn btn-primary" type= "submit") Login

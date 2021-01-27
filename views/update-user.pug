@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        title Register User
+    body(style="padding:5%;padding-top:0")
+        include navbarlogin.pug
+        hr
+
+        h1 Update User Profile
+        br
+        form(method="POST", action="/user/update")
+            input(class="form-control" name="_id" type="hidden" value=user._id)
+            div.form-group
+                label Name
+                input.form-control(name="Name" type="text" value=user.name)
+            div.form-group
+                label Email
+                input.form-control(name="Email" type="text" value=user.email)
+            div.form-group
+                label Password
+                input.form-control(name="Password" type="password" value=user.password)    
+    
+            button(class="btn btn-primary" type= "submit") Update Profile
